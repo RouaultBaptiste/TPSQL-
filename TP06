@@ -1,0 +1,17 @@
+-- TP06 – Suppression
+-- Baptiste Rouault
+
+-- On désactive le safe update pour pouvoir supprimer plusieurs lignes
+SET SQL_SAFE_UPDATES = 0;
+
+-- a) Supprimer dans COMPO toutes les lignes liées aux bons d'avril 2019
+DELETE C
+FROM COMPO C
+JOIN BON B ON C.ID_BON = B.ID
+WHERE YEAR(B.DATE_CMDE) = 2019
+  AND MONTH(B.DATE_CMDE) = 4;
+
+-- b) Supprimer tous les bons d'avril 2019
+DELETE FROM BON
+WHERE YEAR(DATE_CMDE) = 2019
+  AND MONTH(DATE_CMDE) = 4;
