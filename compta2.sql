@@ -1,4 +1,4 @@
--- TP03 - Requêtes basiques Baptiste Rouault exo 
+-- TP03 - Requêtes basiques Baptiste exo 
 
 -- a) Liste de tous les articles
 SELECT * FROM ARTICLE;
