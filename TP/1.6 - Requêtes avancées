@@ -1,0 +1,19 @@
+-- Nombre d'étudiants par cours
+SELECT c.titre,
+       c.code_cours,
+       COUNT(i.id_etudiant) AS nb_etudiants
+FROM Cours c
+LEFT JOIN Inscriptions i ON c.id = i.id_cours
+GROUP BY c.id, c.titre, c.code_cours;
+
+
+-- Étudiants inscrits à plus de 2 cours
+SELECT e.nom,
+       COUNT(i.id_cours) AS nb_cours
+FROM Etudiants e
+JOIN Inscriptions i ON e.id = i.id_etudiant
+GROUP BY e.id, e.nom
+HAVING COUNT(i.id_cours) > 2;
+
+
+
