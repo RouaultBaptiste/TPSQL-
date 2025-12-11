@@ -1,0 +1,41 @@
+-- Tous les étudiants avec leurs cours
+SELECT e.nom,
+       c.titre,
+       c.code_cours,
+       i.date_inscription
+FROM Etudiants e
+JOIN Inscriptions i ON e.id = i.id_etudiant
+JOIN Cours c ON i.id_cours = c.id
+ORDER BY e.nom, c.titre;
+
+
+
+-- Tous les cours avec les étudiants inscrits
+SELECT c.titre,
+       c.code_cours,
+       e.nom,
+       i.date_inscription
+FROM Cours c
+JOIN Inscriptions i ON c.id = i.id_cours
+JOIN Etudiants e ON e.id = i.id_etudiant
+ORDER BY c.titre, e.nom;
+
+
+-- Les cours d'un étudiant (ex : Alice Dupont)
+SELECT c.titre,
+       c.code_cours,
+       i.date_inscription
+FROM Etudiants e
+JOIN Inscriptions i ON e.id = i.id_etudiant
+JOIN Cours c ON i.id_cours = c.id
+WHERE e.nom = 'Alice Dupont';
+
+
+-- Les étudiants d'un cours (ex : Programmation en Python)
+SELECT e.nom,
+       i.date_inscription
+FROM Cours c
+JOIN Inscriptions i ON c.id = i.id_cours
+JOIN Etudiants e ON e.id = i.id_etudiant
+WHERE c.titre = 'Programmation en Python';
+

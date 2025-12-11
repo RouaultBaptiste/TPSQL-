@@ -1,0 +1,23 @@
+-- Supprimer l'inscription d'Alice au cours de Maths
+DELETE FROM Inscriptions
+WHERE id_etudiant = 1
+  AND id_cours = 2;
+
+
+-- Supprimer d'abord ses inscriptions
+DELETE FROM Inscriptions
+WHERE id_etudiant = 2;
+
+-- Puis supprimer l'étudiant
+DELETE FROM Etudiants
+WHERE id = 2;
+
+
+-- Supprimer d'abord les inscriptions sur ce cours
+DELETE FROM Inscriptions
+WHERE id_cours = 3;
+
+-- Puis supprimer le cours
+DELETE FROM Cours
+WHERE id = 3;
+

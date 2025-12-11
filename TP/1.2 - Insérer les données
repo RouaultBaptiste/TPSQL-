@@ -1,0 +1,18 @@
+INSERT INTO Etudiants (nom, date_naissance) VALUES
+('Alice Dupont', '2000-04-12'),
+('Bob Martin', '1999-11-05'),
+('Caroline Dubois', '2001-06-23');
+
+
+INSERT INTO Cours (titre, code_cours) VALUES
+('Programmation en Python', 'PY101'),
+('Mathématiques avancées', 'MATH301'),
+('Bases de données', 'BD202');
+
+INSERT INTO Inscriptions (id_etudiant, id_cours, date_inscription) VALUES
+(1, 1, '2024-09-01'), -- Alice -> Python
+(1, 2, '2024-09-01'), -- Alice -> Maths
+(2, 2, '2024-09-02'), -- Bob -> Maths
+(2, 3, '2024-09-02'), -- Bob -> BD
+(3, 1, '2024-09-03'), -- Caroline -> Python
+(3, 3, '2024-09-03'); -- Caroline -> BD

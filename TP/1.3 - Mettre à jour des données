@@ -1,0 +1,12 @@
+-- Modifier le nom d'un étudiant (ex : Alice Dupont -> Alice D.)
+UPDATE Etudiants
+SET nom = 'Alice D.'
+WHERE id = 1;
+
+
+-- Modifier le nom d'un étudiant (ex : Alice Dupont -> Alice D.)
+UPDATE Etudiants
+SET nom = 'Alice D.'
+WHERE id = 1;
+
+
